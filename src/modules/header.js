@@ -1,5 +1,1 @@
-module.exports = `
-	<header>
-		<h1>Hello Webpack!</h1>
-	</header>
-`
+module.exports = "<header><h1>Hello Really 22!</h1></header>";

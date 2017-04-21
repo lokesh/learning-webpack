@@ -1,3 +1,6 @@
-var header = require('./modules/header.js');
+import './css/red.css';
+import './css/blue.css';
 
-document.body.innerHTML = header;
+import header from './modules/header';
+
+document.body.innerHTML = document.body.innerHTML + header;
