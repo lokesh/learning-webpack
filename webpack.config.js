@@ -13,25 +13,33 @@ module.exports = {
 				test: /\.js$/,
 				use: 'babel-loader'
 			},
-			{
-				test: /\.css$/,
-				use: [
-					'style-loader',
-					'css-loader?importLoaders=1',
-					'postcss-loader',
-				]
-			},
+
+			/*
+			Inject CSS into style tag.
+			 */
 			// {
 			// 	test: /\.css$/,
-			// 	use: ExtractTextPlugin.extract({
-			// 		fallback: 'style-loader',
-			// 		use: 'css-loader'
-			// 	})
+			// 	use: [
+			// 		'style-loader',
+			// 		'css-loader?importLoaders=1',
+			// 		'postcss-loader',
+			// 	]
 			// },
+
+			/*
+			Extract CSS into a separate file
+			 */
+			{
+				test: /\.css$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: ['css-loader?importLoaders=1', 'postcss-loader']
+				})
+			},
 		]
 	},
 	plugins: [
-		// new ExtractTextPlugin("styles.css"),
+		new ExtractTextPlugin("styles.css"),
 		// new UglifyJSPlugin()
 	]
 }
