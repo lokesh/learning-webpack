@@ -1,1 +1,1 @@
-module.exports = "<header><h1>Hello Really 22!</h1></header>";
+module.exports = "<header><h1>H1 - Red</h1><h2>H2 - Blue</h2></header>";

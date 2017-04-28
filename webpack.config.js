@@ -1,4 +1,5 @@
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	entry: `${__dirname}/src/app.js`,
@@ -16,12 +17,21 @@ module.exports = {
 				test: /\.css$/,
 				use: [
 					'style-loader',
-					'css-loader'
+					'css-loader?importLoaders=1',
+					'postcss-loader',
 				]
-			}
+			},
+			// {
+			// 	test: /\.css$/,
+			// 	use: ExtractTextPlugin.extract({
+			// 		fallback: 'style-loader',
+			// 		use: 'css-loader'
+			// 	})
+			// },
 		]
 	},
 	plugins: [
+		// new ExtractTextPlugin("styles.css"),
 		// new UglifyJSPlugin()
 	]
 }

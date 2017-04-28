@@ -445,7 +445,7 @@ function updateLink(linkElement, options, obj) {
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = "<header><h1>Hello Really 22!</h1></header>";
+module.exports = "<header><h1>H1 - Red</h1><h2>H2 - Blue</h2></header>";
 
 /***/ }),
 /* 3 */
@@ -463,8 +463,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./blue.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./blue.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js?importLoaders=1!../../node_modules/postcss-loader/index.js!./blue.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js?importLoaders=1!../../node_modules/postcss-loader/index.js!./blue.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -489,8 +489,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./red.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./red.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js?importLoaders=1!../../node_modules/postcss-loader/index.js!./red.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js?importLoaders=1!../../node_modules/postcss-loader/index.js!./red.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -2608,7 +2608,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n\tbackground: blue !important;\n}\n", ""]);
+exports.push([module.i, "h2 {\n\tcolor: blue;\n}\n", ""]);
 
 // exports
 
@@ -2622,7 +2622,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n\tbackground: red;\n}\n", ""]);
+exports.push([module.i, "body {\n\tbackground: #ddd\n}\nbody h1 {\n\tcolor: #f99\n}\n", ""]);
 
 // exports
 
